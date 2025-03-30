@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Hộp thông báo khi truy cập -->
+    <div id="loading-box" class="loading-box">
+        <div class="loading-content">
+            <i id="loading-icon" class="fas fa-shield-alt"></i>
+            <p id="loading-text"> Dữ liệu hệ thống...</p>
+            <div id="device-info">
+                <p><i class="fas fa-mobile-alt"></i> Thiết bị: <span id="device-name">Đang xác định...</span></p>
+                <p><i class="fas fa-wifi"></i> API: <span id="device-api">Đang lấy...</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> Địa chỉ IP: <span id="device-ip">Đang lấy...</span></p>
+            </div>
+            <button class="close-btn" onclick="closeLoadingBox()">
+                <i class="fas fa-times"></i> Đóng
+            </button>
+        </div>
+    </div>
+    <!-- Đăng nhập -->
+    <div class="login-container" id="login-container">
+<i class="fas fa-circle status-dot1"></i>
+<i class="fas fa-circle status-dot2"></i>
+<i class="fas fa-circle status-dot3"></i>
+        <div class="icon-container">
+    <div class="glowing-icon">
+        <img src="https://i.imgur.com/zrPmJWe.jpeg" alt="Icon">
+    </div>
+<span class="icon-text">𝑯𝑼𝑨̂́𝑵 𝑯𝑨̀ 𝑽𝑵</span>
+</div>
+<div class="divider04"></div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" placeholder="Tài khoản...">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Mật khẩu...">
+        </div>
+<div class="save-account" onclick="toggleSaveLogin()">
+    <i id="saveIcon" class="far fa-square"></i>
+    <span>𝙇𝙪̛𝙪 𝙏𝙖̀𝙞 𝙆𝙝𝙤𝙖̉𝙣 & 𝙈𝙖̣̂𝙩 𝙆𝙝𝙖̂̉𝙪</span>
+</div>
+        <button onclick="login()">
+            <i class="fas fa-sign-in-alt"></i> Đ𝓪̆𝓷𝓰 𝓝𝓱𝓪̣̂𝓹
+        </button>
+<!-- Nút mới có icon chìa khóa -->
+<button onclick="redirectToFacebook()">
+    <i class="fas fa-key"></i> 𝓑𝓾𝔂 𝓚𝓮𝔂
+</button>
+<!-- Nút Gửi Mail -->
+<button onclick="location.href='send_mail.html'">
+    <i class="fas fa-envelope"></i> 𝓖𝓾̛̉𝓲 𝓜𝓪𝓲𝓵
+</button>
+        <div id="login-message"></div>
+    </div>
+
+    <div class="menu-container" id="menu-container">
+<i class="fas fa-circle status-dot1"></i>
+<i class="fas fa-circle status-dot2"></i>
+<i class="fas fa-circle status-dot3"></i>
+<div class="divider2">
+ <div class="switch-container">
+    <label class="switch">
+        <input type="checkbox" onclick="toggleSwitch(this)">
+        <span class="slider"></span>
+    </label>
+    <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐀𝐈𝐍𝐋𝐎𝐂𝐊</span>
+</div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+        <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐍𝐇𝐀̣𝐘 𝐓𝐀̂𝐌</span>
+    </div>
+
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+         <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐀𝐓𝐔𝐇𝐄𝐀𝐃 </span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+         <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐒𝐄𝐍𝐒𝐈𝐓𝐈𝐕𝐈𝐓𝐘</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+        <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text"> 𝐀𝐈𝐌𝐁𝐎𝐓 𝐋𝐈𝐆𝐇𝐓 </span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+         <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐍𝐎𝐑𝐄𝐂𝐎𝐈𝐋 𝐆𝐅𝐗</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+         <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐒𝐌𝐎𝐎𝐓𝐇 𝐒𝐘𝐒𝐓𝐄𝐌</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+        <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐆𝐔𝐍 𝐑𝐄𝐎𝐈𝐂𝐋</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleSwitch(this)">
+            <span class="slider"></span>
+        </label>
+       <i class="fas fa-bullseye aim-icon"></i> <span class="aim-text">𝐇𝐄𝐀𝐃𝐋𝐎𝐂𝐊 𝐎𝐏𝐓𝐈𝐎𝐍</span>
+    </div>
+<!-- Nút mở menu -->
+<button class="mod-menu-btn" onclick="openModMenu()">
+    <i class="fas fa-bars"></i> 𝗔𝗡𝗧𝗜𝗕𝗔𝗡𝗗𝗠𝗢𝗗 
+</button>
+<!-- Menu hiển thị khi mở -->
+<div id="mod-menu" class="mod-menu">
+    <h2><i class="fas fa-cogs"></i> 𝙃𝙐𝘼̂́𝙉 𝙃𝘼̀ 𝙑𝙉 </h2>
+    <button class="mod-close-btn" onclick="closeModMenu()">Đ𝓸́𝓷𝓰 𝓜𝓮𝓷𝓾</button>
+        <div class="checkbox-container">
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝑈𝑆𝐸𝑇 𝐴𝐼𝑀
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝐴𝑂𝑇𝑈𝐴𝐼𝑀
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝑂𝑃𝑇𝐼𝑂𝑁𝐻𝐸𝑅
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝐵𝑈𝐼𝑆𝐿𝑂𝐶𝐾
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝐴𝑆𝐾𝐼 𝐴𝐼𝑀
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝑈𝑀𝑃𝐿𝑂𝐶𝐾
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝐻𝑂𝐿𝑃𝐾𝐼𝑁𝐺
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝐵𝑈𝐹𝐹𝑆𝑀𝑂𝑂𝑇𝐻
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" onclick="toggleCheckbox(this)">
+            <i class="fas fa-shield-alt"></i> 𝑆𝑀𝑂𝑂𝑇𝐻 𝑃𝐻𝑂𝑁𝐸
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+        </label>
+    <!-- Nút kích hoạt chức năng nhập số -->
+    <button class="input-btn" onclick="openInputModal()">𝗡𝗛𝗔̣̂𝗣 𝗗𝗜𝗣𝗜</button>
+    </div>
+</div>
+</div>
+<!-- Modal nhập số -->
+  <div id="input-modal" class="input-modal">
+    <div class="input-modal-content">
+      <p>𝗡𝗵𝗮̣̂𝗽 𝘀𝗼̂́ 𝘁𝘂̛̀ 𝟱𝟬 đ𝗲̂́𝗻 𝟯𝟱𝟬:</p>
+      <input type="number" id="number-input" min="50" max="350" placeholder="Nhập số...">
+      <br>
+      <button onclick="submitNumber()">𝙊𝙆</button>
+    </div>
+  </div>
+<!-- Thông báo nhập thành công -->
+  <div id="notification-modal" class="notification-modal">
+    <p><i class="fas fa-check-circle"></i> Đ𝔞̃ 𝔫𝔥𝔞̣̂𝔭 𝔇𝔦𝔭𝔦</p>
+  </div>
+<div class="divider2">
+<div class="mobile-container">
+ <i class="fas fa-mobile-alt"></i>    <span class="extra-text"> 𝙸𝙿𝙷𝙾𝙽𝙴 (𝙸𝙾𝚂)</span>
+</div>
+<div class="expire-container">
+    <i class="fas fa-hourglass-half"></i>
+    <span id="countdown-timer"></span>
+</div>
+<div class="divider04"></div>
+<div class="time-container">
+    <i class="fas fa-clock"></i>
+    <span id="current-time"></span>
+</div>
+<div class="greeting-container">
+    <i class="fas fa-sun"></i>
+    <span id="greeting-message"></span>
+</div>
+</div>
+<div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61561543393412" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://t.me/suporthuanha" target="_blank" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://zaloapp.com/qr/p/1s3nnmtozvd1l?src=qr" target="_blank" class="icon zalo"><i class="fas fa-comments"></i></a>
+</div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
