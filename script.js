@@ -3,7 +3,7 @@ function login() {
     const password = document.getElementById("password").value;
     const loginMessage = document.getElementById("login-message");
 
-    if (username === "havanhuan" && password === "2ksub") {
+    if (username === "havanhuan" && password === "3ksub") {
         loginMessage.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Đang đăng nhập...`;
         
         setTimeout(() => {
